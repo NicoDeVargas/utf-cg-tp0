@@ -1,0 +1,133 @@
+body {
+  background-color: #383635;
+  color: #cfccc6;
+  font-family: Verdana, Tahoma, Geneva, sans-serif;
+  font-size: 13px;
+  line-height: 1.6;
+  margin: 0;
+  padding: 24px 12px;
+}
+
+header, main {
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+header {
+  border-bottom: 1px solid #575551;
+  padding-bottom: 12px;
+  margin-bottom: 24px;
+}
+
+h1 {
+  color: #8fb4d1;
+  font-size: 24px;
+  margin: 0 0 4px 0;
+}
+
+header p {
+  color: #96928b;
+  font-size: 12px;
+  margin: 0;
+}
+
+section {
+  margin-bottom: 24px;
+}
+
+h2 {
+  background-color: #4f4d49;
+  border: 1px solid #5f5d58;
+  border-bottom: none;
+  color: #8fb4d1;
+  font-size: 14px;
+  margin: 0;
+  padding: 6px 12px;
+}
+
+.painel {
+  background-color: #454340;
+  border: 1px solid #5f5d58;
+  padding: 16px;
+  overflow: hidden;
+}
+
+.painel p {
+  margin: 0 0 12px 0;
+}
+
+.foto {
+  border: 1px solid #6f6d67;
+  float: left;
+  height: 160px;
+  margin: 0 16px 8px 0;
+  padding: 3px;
+  width: 160px;
+}
+
+.jogos {
+  display: grid;
+  grid-gap: 12px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.jogo {
+  background-color: #3f3d3a;
+  border: 1px solid #55534f;
+  padding: 10px;
+}
+
+.jogo img {
+  background-color: #333130;
+  border: 1px solid #55534f;
+  display: block;
+  height: 280px;
+  object-fit: contain;
+  width: 100%;
+}
+
+.jogo h3 {
+  color: #c8c4bd;
+  font-size: 13px;
+  margin: 10px 0 2px 0;
+}
+
+.jogo p {
+  font-size: 12px;
+  margin: 0 0 6px 0;
+}
+
+.horas {
+  color: #8b9c6d;
+}
+
+.jogo.sorteado {
+  background-color: #4d4b46;
+  border-color: #8fb4d1;
+}
+
+.sorteio {
+  border-top: 1px solid #55534f;
+  margin-top: 16px;
+  padding-top: 16px;
+}
+
+button {
+  background-color: #5a5854;
+  border: 1px solid #6f6d67;
+  color: #d8d5cf;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 13px;
+  padding: 6px 18px;
+}
+
+button:hover {
+  background-color: #6a6864;
+}
+
+#resultado {
+  color: #8fb4d1;
+  margin: 12px 0 0 0;
+  min-height: 20px;
+}
