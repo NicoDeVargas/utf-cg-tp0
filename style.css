@@ -60,6 +60,7 @@ h2 {
   border: 1px solid #6f6d67;
   float: left;
   height: 160px;
+  object-fit: cover;
   margin: 0 16px 8px 0;
   padding: 3px;
   width: 160px;

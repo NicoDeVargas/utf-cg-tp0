@@ -102,3 +102,16 @@ misterioso.addEventListener('click', function () {
   somFogueira.volume = volume.value / 100;
   somFogueira.play().catch(function () {});
 });
+
+var dog = document.getElementById('dog');
+var foto = document.querySelector('.foto');
+
+dog.addEventListener('click', function () {
+  if (foto.getAttribute('src') === 'images/nicolas.png') {
+    foto.src = 'images/dog.jpeg';
+    foto.alt = 'Yujizao';
+  } else {
+    foto.src = 'images/nicolas.png';
+    foto.alt = 'Foto de Nicolas Rodrigues de Vargas';
+  }
+});
