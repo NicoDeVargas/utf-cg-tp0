@@ -45,3 +45,60 @@ volume.addEventListener('input', function () {
     tocando.volume = volume.value / 100;
   }
 });
+
+var misterioso = document.getElementById('misterioso');
+var fogueira = document.getElementById('fogueira');
+var tela = document.getElementById('particulas');
+var pincel = tela.getContext('2d');
+var particulas = [];
+var animando = null;
+var somFogueira = null;
+
+function animar() {
+  pincel.clearRect(0, 0, tela.width, tela.height);
+
+  if (particulas.length < 80) {
+    particulas.push({
+      x: tela.width / 2 + Math.random() * 50 - 25,
+      y: tela.height - 120,
+      vx: Math.random() - 0.5,
+      vy: -(Math.random() * 1.5 + 0.5),
+      vida: 1
+    });
+  }
+
+  for (var i = particulas.length - 1; i >= 0; i--) {
+    var p = particulas[i];
+
+    p.x += p.vx;
+    p.y += p.vy;
+    p.vida -= 0.012;
+
+    if (p.vida <= 0) {
+      particulas.splice(i, 1);
+      continue;
+    }
+
+    pincel.globalAlpha = p.vida;
+    pincel.fillStyle = p.vida > 0.7 ? '#ffa33c' : '#c9301c';
+    pincel.fillRect(p.x, p.y, 3, 3);
+  }
+
+  pincel.globalAlpha = 1;
+}
+
+misterioso.addEventListener('click', function () {
+  fogueira.classList.add('aberta');
+
+  if (!animando) {
+    animando = setInterval(animar, 30);
+  }
+
+  if (somFogueira) {
+    somFogueira.pause();
+  }
+
+  somFogueira = new Audio('audio/bonfire.mp4');
+  somFogueira.volume = volume.value / 100;
+  somFogueira.play().catch(function () {});
+});
