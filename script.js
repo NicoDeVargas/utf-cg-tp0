@@ -1,6 +1,7 @@
 var jogos = document.querySelectorAll('.jogo');
 var botao = document.getElementById('sortear');
 var resultado = document.getElementById('resultado');
+var tocando = null;
 
 botao.addEventListener('click', function () {
   var sorteado = Math.floor(Math.random() * jogos.length);
@@ -11,8 +12,12 @@ botao.addEventListener('click', function () {
 
   jogos[sorteado].classList.add('sorteado');
 
-  var nome = jogos[sorteado].querySelector('h3').textContent;
-  var horas = jogos[sorteado].querySelector('.horas').textContent;
+  if (tocando) {
+    tocando.pause();
+  }
 
-  resultado.textContent = 'Hoje você joga: ' + nome + ' (' + horas + ')';
+  tocando = new Audio(jogos[sorteado].dataset.audio);
+  tocando.play().catch(function () {});
+
+  resultado.textContent = 'Tocando: ' + jogos[sorteado].dataset.musica;
 });
