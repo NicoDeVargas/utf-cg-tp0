@@ -1,5 +1,7 @@
 var jogos = document.querySelectorAll('.jogo');
 var botao = document.getElementById('sortear');
+var pausar = document.getElementById('pausar');
+var volume = document.getElementById('volume');
 var resultado = document.getElementById('resultado');
 var tocando = null;
 
@@ -17,7 +19,29 @@ botao.addEventListener('click', function () {
   }
 
   tocando = new Audio(jogos[sorteado].dataset.audio);
+  tocando.volume = volume.value / 100;
   tocando.play().catch(function () {});
 
+  pausar.textContent = 'Pausar';
   resultado.textContent = 'Tocando: ' + jogos[sorteado].dataset.musica;
+});
+
+pausar.addEventListener('click', function () {
+  if (!tocando) {
+    return;
+  }
+
+  if (tocando.paused) {
+    tocando.play().catch(function () {});
+    pausar.textContent = 'Pausar';
+  } else {
+    tocando.pause();
+    pausar.textContent = 'Continuar';
+  }
+});
+
+volume.addEventListener('input', function () {
+  if (tocando) {
+    tocando.volume = volume.value / 100;
+  }
 });

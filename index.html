@@ -44,7 +44,7 @@
             <p>Esse aqui é uma obra de arte, o boss final da DLC me fez desinstalar o jogo.</p>
           </div>
 
-          <div class="jogo" data-audio="audio/cs2.mp3" data-musica="Main Menu Theme">
+          <div class="jogo" data-audio="audio/cs2.mp3" data-musica="CS:GO Main Menu Theme">
             <img src="images/cs2.png" alt="Capa de Counter-Strike 2">
             <h3>Counter-Strike 2</h3>
             <p class="horas">4122 horas jogadas</p>
@@ -75,7 +75,14 @@
         </div>
 
         <div class="sorteio">
-          <button id="sortear">Sortear jogo</button>
+          <div class="controles">
+            <button id="sortear">Sortear jogo</button>
+            <div class="controles-audio">
+              <button id="pausar">Pausar</button>
+              <label for="volume">Volume</label>
+              <input type="range" id="volume" min="0" max="100" value="70">
+            </div>
+          </div>
           <p id="resultado"></p>
         </div>
 

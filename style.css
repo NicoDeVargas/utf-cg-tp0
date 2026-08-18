@@ -131,3 +131,24 @@ button:hover {
   margin: 12px 0 0 0;
   min-height: 20px;
 }
+
+.controles {
+  align-items: center;
+  display: flex;
+}
+
+.controles-audio {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  margin-left: auto;
+}
+
+.controles-audio label {
+  color: #96928b;
+  font-size: 12px;
+}
+
+#volume {
+  width: 110px;
+}
